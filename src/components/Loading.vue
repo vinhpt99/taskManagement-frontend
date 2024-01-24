@@ -1,5 +1,5 @@
 <template>
-  <div v-if="isLoading" class="overlay">
+  <div v-if="isLoading" class="loading">
     <div
       class="inline-block h-14 w-14 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
       role="status">
@@ -17,7 +17,7 @@ defineProps({
 })
 </script>
 <style>
-.overlay {
+.loading {
   position: fixed;
   top: 0;
   left: 0;

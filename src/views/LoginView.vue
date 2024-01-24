@@ -12,6 +12,7 @@ import BaseButton from '@/components/BaseButton.vue'
 import BaseButtons from '@/components/BaseButtons.vue'
 import LayoutGuest from '@/layouts/LayoutGuest.vue'
 import Loading from '@/components/Loading.vue';
+import { useMainStore } from '@/stores/main.js'
 
 const form = reactive({
   login: null,
@@ -28,8 +29,10 @@ const submit = () => {
     email: form.login,
     password: form.pass
   }).then(response => {
-    const token = response.data.token;
+    const { token, user } = response.data;
     localStorage.setItem('access_token', token);
+    const mainStore = useMainStore()
+    mainStore.setUser({ name: user.name, email: user.email })
     axios.defaults.headers.common['Authorization'] = 'Bearer ' + token;
     isLoading.value = false;
     router.push('/dashboard')

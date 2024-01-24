@@ -7,7 +7,7 @@ const routes = [
   { path: '/dashboard', name: 'dashboard', component: Home, meta: { requiresAuth: true } },
   {
     meta: {
-      title: 'Tables'
+      title: 'Task Management'
     },
     path: '/tables',
     name: 'tables',

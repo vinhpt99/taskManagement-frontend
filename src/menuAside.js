@@ -21,7 +21,7 @@ export default [
   },
   {
     to: '/tables',
-    label: 'Tables',
+    label: 'Task Management',
     icon: mdiTable
   },
   {
